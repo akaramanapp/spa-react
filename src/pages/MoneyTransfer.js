@@ -60,7 +60,7 @@ function MoneyTransfer() {
             </MenuItem>
           ))}
         </TextField>
-        <Button onClick={handleClick} style={{ width: '98%', height: 60, backgroundColor: '#FF5733' }} variant="contained">
+        <Button onClick={handleClick} style={{ width: '98%', marginLeft: 8, marginTop: 3, height: 60, backgroundColor: '#FF5733' }} variant="contained">
           <Typography variant="button" fontWeight="bold">
             Devam
           </Typography>

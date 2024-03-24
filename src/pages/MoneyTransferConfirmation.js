@@ -41,7 +41,7 @@ export default function MoneyTransferConfirmation() {
                 />
                 <Button style={{ width: '98%', marginLeft: 8, marginTop: 3, height: 60, backgroundColor: '#FF5733' }} variant="contained">
                     <Typography variant="button" fontWeight="bold">
-                        Devam
+                        Onayla
                     </Typography>
                 </Button>
             </div>
