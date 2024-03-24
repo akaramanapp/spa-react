@@ -36,14 +36,14 @@ function App() {
         }}
         noValidate
         autoComplete="off"
-        style={{ padding: '10px' }}
+        style={{ padding: 20 }}
       >
-        <TextField style={{ width: '80%' }} id="outlined-basic" label="Alici Adi" variant="outlined" />
-        <TextField style={{ width: '80%' }} id="outlined-basic" label="IBAN" variant="outlined" />
-        <TextField style={{ width: '80%' }} id="outlined-basic" label="Aciklama" variant="outlined" />
+        <TextField style={{ width: '98%' }} id="outlined-basic" label="Alici Adi" variant="outlined" />
+        <TextField style={{ width: '98%' }} id="outlined-basic" label="IBAN" variant="outlined" />
+        <TextField style={{ width: '98%' }} id="outlined-basic" label="Aciklama" variant="outlined" />
         <TextField
           id="outlined-select-currency"
-          style={{ width: '80%' }}
+          style={{ width: '98%' }}
           select
           label="Select"
           defaultValue="EUR"
@@ -55,7 +55,7 @@ function App() {
             </MenuItem>
           ))}
         </TextField>
-        <Button style={{ width: '80%', height: 60, backgroundColor: '#FF5733' }} variant="contained">
+        <Button style={{ width: '98%', height: 60, backgroundColor: '#FF5733' }} variant="contained">
           <Typography variant="button" fontWeight="bold">
             Devam
           </Typography>
