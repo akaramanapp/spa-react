@@ -1,68 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
-import ButtonUsage from './component/Button';
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import MenuItem from '@mui/material/MenuItem';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import * as React from "react";
+import * as ReactDOM from "react-dom/client";
+import MoneyTransfer from "./pages/MoneyTransfer";
+import MoneyTransferConfirmation from "./pages/MoneyTransferConfirmation";
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 
-function App() {
-  const currencies = [
+export default function App() {
+  const router = createBrowserRouter([
     {
-      value: 'USD',
-      label: '$',
+      path: "/",
+      element: <MoneyTransfer />,
     },
     {
-      value: 'EUR',
-      label: '€',
+      path: "/confirmation",
+      element: <MoneyTransferConfirmation />,
     },
-    {
-      value: 'BTC',
-      label: '฿',
-    },
-    {
-      value: 'JPY',
-      label: '¥',
-    },
-  ];
+  ]);
 
   return (
-    <div className="App">
-      <Box
-        component="form"
-        sx={{
-          '& .MuiTextField-root': { m: 1, width: '25ch' },
-        }}
-        noValidate
-        autoComplete="off"
-        style={{ padding: 20 }}
-      >
-        <TextField style={{ width: '98%' }} id="outlined-basic" label="Alici Adi" variant="outlined" />
-        <TextField style={{ width: '98%' }} id="outlined-basic" label="IBAN" variant="outlined" />
-        <TextField style={{ width: '98%' }} id="outlined-basic" label="Aciklama" variant="outlined" />
-        <TextField
-          id="outlined-select-currency"
-          style={{ width: '98%' }}
-          select
-          label="Select"
-          defaultValue="EUR"
-          helperText="Please select your currency"
-        >
-          {currencies.map((option) => (
-            <MenuItem key={option.value} value={option.value}>
-              {option.label}
-            </MenuItem>
-          ))}
-        </TextField>
-        <Button style={{ width: '98%', height: 60, backgroundColor: '#FF5733' }} variant="contained">
-          <Typography variant="button" fontWeight="bold">
-            Devam
-          </Typography>
-        </Button>
-      </Box>
-    </div>
+    <React.StrictMode>
+      <RouterProvider router={router} />
+    </React.StrictMode>
   );
 }
 
-export default App;
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
