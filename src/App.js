@@ -1,23 +1,66 @@
 import logo from './logo.svg';
 import './App.css';
+import ButtonUsage from './component/Button';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import MenuItem from '@mui/material/MenuItem';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 
 function App() {
+  const currencies = [
+    {
+      value: 'USD',
+      label: '$',
+    },
+    {
+      value: 'EUR',
+      label: '€',
+    },
+    {
+      value: 'BTC',
+      label: '฿',
+    },
+    {
+      value: 'JPY',
+      label: '¥',
+    },
+  ];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <Box
+        component="form"
+        sx={{
+          '& .MuiTextField-root': { m: 1, width: '25ch' },
+        }}
+        noValidate
+        autoComplete="off"
+        style={{ padding: '10px' }}
+      >
+        <TextField style={{ width: '80%' }} id="outlined-basic" label="Alici Adi" variant="outlined" />
+        <TextField style={{ width: '80%' }} id="outlined-basic" label="IBAN" variant="outlined" />
+        <TextField style={{ width: '80%' }} id="outlined-basic" label="Aciklama" variant="outlined" />
+        <TextField
+          id="outlined-select-currency"
+          style={{ width: '80%' }}
+          select
+          label="Select"
+          defaultValue="EUR"
+          helperText="Please select your currency"
         >
-          Learn React
-        </a>
-      </header>
+          {currencies.map((option) => (
+            <MenuItem key={option.value} value={option.value}>
+              {option.label}
+            </MenuItem>
+          ))}
+        </TextField>
+        <Button style={{ width: '80%', height: 60, backgroundColor: '#FF5733' }} variant="contained">
+          <Typography variant="button" fontWeight="bold">
+            Devam
+          </Typography>
+        </Button>
+      </Box>
     </div>
   );
 }
